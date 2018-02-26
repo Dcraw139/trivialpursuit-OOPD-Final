@@ -1,6 +1,6 @@
 .root{
-    -fx-alignment: center;
-    -fx-background-color: darkkhaki;
+    align-items: center;
+    -fx-background-color: darkgray;
 }
 #startImage{
     -fx-background-image: url('/pictures/logo.png');

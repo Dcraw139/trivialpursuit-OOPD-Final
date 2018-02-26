@@ -45,6 +45,7 @@ public class startupWindow {
 
     /**
      * checks weather or not the user truly wants to exit
+     *
      * @param mouseEvent mouse clicked
      */
     public void exitConfirm(MouseEvent mouseEvent) {
