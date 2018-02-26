@@ -29,6 +29,6 @@
         </Button>
     </children>
     <stylesheets>
-        <URL value="@style.css"/>
+        <URL value="@startStyle.css"/>
     </stylesheets>
 </VBox>
