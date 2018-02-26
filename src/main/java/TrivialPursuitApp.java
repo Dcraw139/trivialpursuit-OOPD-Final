@@ -19,5 +19,6 @@ public class TrivialPursuitApp extends Application {
         stage.setScene(scene);
         stage.setTitle("Trivial Pursuit");
         stage.show();
+
     }
 }
