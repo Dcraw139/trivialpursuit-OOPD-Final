@@ -1,0 +1,9 @@
+.root{
+    -fx-alignment: center;
+    -fx-background-color: darkkhaki;
+}
+#startImage{
+    -fx-background-image: url('/pictures/logo.png');
+    -fx-background-repeat: no-repeat;
+    -fx-alignment: center;
+}

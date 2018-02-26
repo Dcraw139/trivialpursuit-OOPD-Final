@@ -6,12 +6,12 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.layout.Pane?>
 
-<VBox fx:controller="Controller.startupWindow" fx:id="startupWindow" alignment="CENTER" maxHeight="-Infinity"
+<?import java.net.URL?>
+<VBox id="mainBox" fx:controller="Controller.startupWindow" fx:id="startupWindow" alignment="CENTER" maxHeight="-Infinity"
       maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0"
       xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
     <children>
-        <Pane fx:id="starterImage" prefWidth="400" prefHeight="200"
-              style="-fx-background-image: url('/pictures/logo.png')">
+        <Pane id="startImage" fx:id="starterImage" prefWidth="400" prefHeight="200">
             <VBox.margin>
                 <Insets bottom="20.0"/>
             </VBox.margin>
@@ -28,4 +28,7 @@
             </font>
         </Button>
     </children>
+    <stylesheets>
+        <URL value="@style.css"/>
+    </stylesheets>
 </VBox>
