@@ -1,5 +1,8 @@
 package Controller;
 
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
@@ -50,5 +53,16 @@ public class playerWindow {
      * @param mouseEvent mouse clicked
      */
     public void checkForContinue(MouseEvent mouseEvent) {
+        try {
+            Stage stageC = (Stage) startButton.getScene().getWindow();
+            stageC.close();
+            Parent root1 = FXMLLoader.load(ClassLoader.getSystemResource("fxml/gameWindow.fxml"));
+            Stage stage = new Stage();
+            stage.setTitle("Trivial Pursuit");
+            stage.setScene(new Scene(root1));
+            stage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
