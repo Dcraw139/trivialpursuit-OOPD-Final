@@ -151,6 +151,16 @@ public class gameWin implements Initializable {
         boardArea.add(nineeight.getShow(), 8, 15);
         TileImpl eighteight = new TileImpl(Color.GREEN, TileType.WEDGE);
         boardArea.add(eighteight.getShow(), 7, 15);
+        TileImpl eightseven = new TileImpl(Color.ORANGE, TileType.NORMAL);
+        boardArea.add(eightseven.getShow(), 7, 14);
+        TileImpl ninesix = new TileImpl(Color.YELLOW, TileType.NORMAL);
+        boardArea.add(ninesix.getShow(), 7, 13);
+        TileImpl ninefive = new TileImpl(Color.BLUE, TileType.SHORTCUT);
+        boardArea.add(ninefive.getShow(), 7, 12);
+        TileImpl ninefour = new TileImpl(Color.PURPLE, TileType.NORMAL);
+        boardArea.add(ninefour.getShow(), 7, 11);
+        TileImpl ninethree = new TileImpl(Color.PINK, TileType.NORMAL);
+        boardArea.add(ninethree.getShow(), 7, 10);
         TileImpl seveneight = new TileImpl(Color.ORANGE, TileType.NORMAL);
         boardArea.add(seveneight.getShow(), 6, 15);
         TileImpl sixeight = new TileImpl(Color.FREEROLL, TileType.FREE);
@@ -165,6 +175,16 @@ public class gameWin implements Initializable {
         boardArea.add(twoeight.getShow(), 1, 15);
         TileImpl oneeight = new TileImpl(Color.PURPLE, TileType.WEDGE);
         boardArea.add(oneeight.getShow(), 0, 15);
+        TileImpl twoseven = new TileImpl(Color.YELLOW, TileType.NORMAL);
+        boardArea.add(twoseven.getShow(), 1, 14);
+        TileImpl threesix = new TileImpl(Color.PINK, TileType.NORMAL);
+        boardArea.add(threesix.getShow(), 2, 13);
+        TileImpl fourseven = new TileImpl(Color.ORANGE, TileType.SHORTCUT);
+        boardArea.add(fourseven.getShow(), 3, 12);
+        TileImpl fivesix = new TileImpl(Color.BLUE, TileType.NORMAL);
+        boardArea.add(fivesix.getShow(), 4, 11);
+        TileImpl threeseven = new TileImpl(Color.GREEN, TileType.NORMAL);
+        boardArea.add(threeseven.getShow(), 5, 10);
         //Try to make these span two rows left
         TileImpl onethree = new TileImpl(Color.PINK, TileType.NORMAL);
         boardArea.add(onethree.getShow(), 0, 2);
