@@ -8,17 +8,18 @@
 
 <VBox fx:controller="Controller.playerWindow" fx:id="addPlayerScene" alignment="CENTER" maxHeight="-Infinity"
       maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0"
-      xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+      xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" style="-fx-background-color: teal;">
+
     <children>
-        <TextField fx:id="playerNamer"/>
-        <Button fx:id="addPlayer" mnemonicParsing="false" onMouseClicked="#addPlayers" text="Add Player"/>
-        <HBox fx:id="deckOptions" alignment="CENTER" prefHeight="28.0" prefWidth="600.0">
+        <TextField fx:id="playerNamer"  prefHeight="28.0" prefWidth="50.0"/>
+        <Button fx:id="addPlayer" prefWidth="250.0" mnemonicParsing="false" onMouseClicked="#addPlayers" text="Add Player"/>
+        <HBox fx:id="deckOptions" alignment="CENTER" prefHeight="28.0" prefWidth="250.0">
             <children>
-                <ChoiceBox fx:id="deckOne" prefWidth="150.0"/>
-                <ChoiceBox fx:id="deckTwo" prefWidth="150.0"/>
+                <ChoiceBox fx:id="deckOne" prefWidth="250.0"/>
+                <ChoiceBox fx:id="deckTwo" prefWidth="250.0"/>
             </children>
         </HBox>
-        <Button fx:id="startButton" mnemonicParsing="false" text="Start Game" onMouseClicked="#checkForContinue"/>
-        <Button fx:id="exitbutton" mnemonicParsing="false" text="Exit" onMouseClicked="#exitConfirm"/>
+        <Button fx:id="startButton" prefWidth="250.0" mnemonicParsing="false" text="Start Game" onMouseClicked="#checkForContinue"/>
+        <Button fx:id="exitbutton" prefWidth="250.0" mnemonicParsing="false" text="Exit" onMouseClicked="#exitConfirm"/>
     </children>
 </VBox>
