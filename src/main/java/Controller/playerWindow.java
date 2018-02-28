@@ -56,7 +56,9 @@ public class playerWindow {
         try {
             Stage stageC = (Stage) startButton.getScene().getWindow();
             stageC.close();
-            Parent root1 = FXMLLoader.load(ClassLoader.getSystemResource("fxml/gameWindow.fxml"));
+            FXMLLoader loader = new FXMLLoader(ClassLoader.getSystemResource("fxml/gameWindow.fxml"));
+            Parent root1 = loader.load();
+            gameWin gWin = loader.getController();
             Stage stage = new Stage();
             stage.setTitle("Trivial Pursuit");
             stage.setScene(new Scene(root1));
