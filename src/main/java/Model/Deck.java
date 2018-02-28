@@ -22,6 +22,7 @@ public class Deck extends ArrayList<Card> {
             + "{\"question\" : \"does this work\", \"color\" : \"blue\", \"category\" : \"history\" , "
             + "\"answer1\" : \"true\" , \"answer2\" : \"false\", \"rightAnswer\" : \"true\"}]}";
     }
+    //plz stop doing this
 }
 
 
