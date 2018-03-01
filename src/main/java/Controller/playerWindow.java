@@ -29,12 +29,16 @@ public class playerWindow {
     public Button startButton;
     public Button exitbutton;
 
+    public ArrayList<PlayerImpl> player = new ArrayList();
+
+
     public void addPlayers(MouseEvent mouseEvent) {
-        ArrayList<TextField> player = new ArrayList();
         String pn;
         pn = playerNamer.getText();
         PlayerImpl newPlayer =  new PlayerImpl(pn);
-    }
+        player.add(newPlayer);
+        System.out.println(player.toString());
+            }
 
     /**
      * checks weather or not the user truly wants to exit
