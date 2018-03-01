@@ -13,6 +13,8 @@ public class PlayerImpl extends PersonImpl implements Player, Comparable, Serial
     private int posX;
     private int posY;
     private static final int MIN_POS = 0;
+    private static final int PLAYER_X = 7;
+    private static final int PLAYER_Y = 8;
 
     /**
      * default constructor
@@ -27,15 +29,13 @@ public class PlayerImpl extends PersonImpl implements Player, Comparable, Serial
      * overloaded constructor
      *
      * @param n name
-     * @param x x position
-     * @param y y position
      */
-    PlayerImpl(String n, int x, int y) {
+    PlayerImpl(String n) {
         super(n);
         Random random = new Random();
         this.initRoll = random.nextInt(6) + 1;
-        this.setPosX(x);
-        this.setPosY(y);
+        this.setPosX(PLAYER_X);
+        this.setPosY(PLAYER_Y);
     }
 
     @Override
