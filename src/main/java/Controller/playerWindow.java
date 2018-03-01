@@ -1,5 +1,8 @@
 package Controller;
 
+import Model.Factory;
+import Model.Player;
+import Model.PlayerImpl;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -27,6 +30,10 @@ public class playerWindow {
     public Button exitbutton;
 
     public void addPlayers(MouseEvent mouseEvent) {
+        ArrayList<TextField> player = new ArrayList();
+        String pn;
+        pn = playerNamer.getText();
+        PlayerImpl newPlayer =  new PlayerImpl(pn);
     }
 
     /**
@@ -69,12 +76,5 @@ public class playerWindow {
         } catch (Exception e) {
             e.printStackTrace();
         }
-    }
-
-    public void addPlayer(ActionEvent e){
-        ArrayList<TextField> player = new ArrayList();
-        player.add(playerNamer);
-
-
     }
 }
