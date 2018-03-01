@@ -1,5 +1,6 @@
 package Controller;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -8,6 +9,8 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+
+import java.util.ArrayList;
 
 /**
  * the controller class for the player window
@@ -66,5 +69,12 @@ public class playerWindow {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public void addPlayer(ActionEvent e){
+        ArrayList<TextField> player = new ArrayList();
+        player.add(playerNamer);
+
+
     }
 }
