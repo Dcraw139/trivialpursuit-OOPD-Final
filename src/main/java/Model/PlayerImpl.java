@@ -30,7 +30,7 @@ public class PlayerImpl extends PersonImpl implements Player, Comparable, Serial
      *
      * @param n name
      */
-    PlayerImpl(String n) {
+    public PlayerImpl(String n) {
         super(n);
         Random random = new Random();
         this.initRoll = random.nextInt(6) + 1;
