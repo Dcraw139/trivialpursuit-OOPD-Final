@@ -8,11 +8,14 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 
 import java.net.URL;
+import java.util.Random;
 import java.util.ResourceBundle;
 
 /**
@@ -37,7 +40,7 @@ public class gameWin implements Initializable {
     @FXML
     public VBox diceRollHolder;
     @FXML
-    public ImageView diceRollImage;
+    public Pane diceRollImage;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -206,5 +209,37 @@ public class gameWin implements Initializable {
         boardArea.add(zerofive.getShow(), 0, 12);
 
 
+    }
+
+    public void diceRoller(MouseEvent mouseEvent) {
+        Random random = new Random();
+        int dRoll = random.nextInt(6)+1;
+        switch (dRoll){
+            case 1:
+                diceRollImage.setStyle("-fx-background-image: url('pictures/diceone.png')");
+                infoText.setText("You rolled one!");
+                break;
+            case 2:
+                diceRollImage.setStyle("-fx-background-image: url('pictures/dicetwo.png')");
+                infoText.setText("You rolled two!");
+                break;
+            case 3:
+                diceRollImage.setStyle("-fx-background-image: url('pictures/dicethree.png')");
+                infoText.setText("You rolled three!");
+                break;
+            case 4:
+                diceRollImage.setStyle("-fx-background-image: url('pictures/dicefour.png')");
+                infoText.setText("You rolled four!");
+                break;
+            case 5:
+                diceRollImage.setStyle("-fx-background-image: url('pictures/dicefour.png')");
+                infoText.setText("You rolled five!");
+                break;
+            case 6:
+                diceRollImage.setStyle("-fx-background-image: url('pictures/dicesix.png')");
+                infoText.setText("You rolled six!");
+                break;
+                default:
+        }
     }
 }

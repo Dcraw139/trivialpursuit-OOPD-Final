@@ -11,6 +11,8 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
+<?import javafx.scene.layout.Pane?>
+<?import java.net.URL?>
 <BorderPane fx:id="gameBoarder" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.gameWin">
     <center>
         <GridPane fx:id="boardArea" style="-fx-grid-lines-visible: true" BorderPane.alignment="CENTER">
@@ -52,7 +54,7 @@
         </GridPane>
     </center>
     <top>
-        <Button fx:id="rollDice" mnemonicParsing="false" text="Roll" BorderPane.alignment="CENTER" />
+        <Button fx:id="rollDice" mnemonicParsing="false" text="Roll" BorderPane.alignment="CENTER" onMouseClicked="#diceRoller" />
     </top>
     <left>
         <TableView fx:id="playerScores" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
@@ -66,13 +68,16 @@
         </TableView>
     </left>
     <bottom>
-        <Label fx:id="infoText" text="Info Goes Here" BorderPane.alignment="CENTER" />
+        <Label fx:id="infoText" text="Info Goes Here" BorderPane.alignment="CENTER" id="infoText"/>
     </bottom>
     <right>
         <VBox fx:id="diceRollHolder" alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
             <children>
-                <ImageView fx:id="diceRollImage" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+                <Pane fx:id="diceRollImage" prefHeight="200" prefWidth="200.0" pickOnBounds="true" id="diceRollImage"/>
             </children>
         </VBox>
     </right>
+    <stylesheets>
+        <URL value="@gameStyle.css"/>
+    </stylesheets>
 </BorderPane>

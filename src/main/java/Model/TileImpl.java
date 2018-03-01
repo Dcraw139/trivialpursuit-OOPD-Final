@@ -1,5 +1,6 @@
 package Model;
 
+import javafx.scene.control.Alert;
 import javafx.scene.layout.Pane;
 
 import java.io.Serializable;
@@ -19,6 +20,13 @@ public class TileImpl implements Tile, Comparable, Serializable {
     public TileImpl() {
         Pane x = new Pane();
         this.setShow(x);
+        x.setOnMouseClicked(event -> alertHold());
+    }
+
+    private void alertHold() {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setContentText(this.getType().toString());
+        alert.show();
     }
 
     /**
@@ -32,6 +40,7 @@ public class TileImpl implements Tile, Comparable, Serializable {
         this.setColor(c);
         Pane x = new Pane();
         this.setShow(x);
+        x.setOnMouseClicked(event -> alertHold());
         colorChange();
     }
 

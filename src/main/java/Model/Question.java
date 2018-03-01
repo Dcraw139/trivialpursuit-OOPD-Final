@@ -14,7 +14,8 @@ public class Question {
 //    private boolean f;
 //    private boolean isTrueOrFalse;
 
-    public Question () {}
+    public Question() {
+    }
 
     public Question(String question, Color color, String category, String answer1, String answer2, String rightAnswer) {
         this.setQuestion(question);
@@ -41,7 +42,7 @@ public class Question {
     }
 
     public void setQuestion(String question) {
-        if(question.equals(null) || question.equals("")){
+        if (question.equals(null) || question.equals("")) {
             throw new IllegalArgumentException("Question must not be null or empty");
         }
         this.question = question;
@@ -52,7 +53,7 @@ public class Question {
     }
 
     public void setColor(Color color) {
-        if(color == null){
+        if (color == null) {
             throw new IllegalArgumentException("Color must not be null!");
         }
         this.color = color;
@@ -63,7 +64,7 @@ public class Question {
     }
 
     public void setCategory(String category) {
-        if(category.equals(null) || category.equals("")) {
+        if (category.equals(null) || category.equals("")) {
             throw new IllegalArgumentException("Category must not be null or empty");
         }
         this.category = category;
@@ -74,7 +75,7 @@ public class Question {
     }
 
     public void setAnswer1(String answer1) {
-        if(answer1.equals(null) || answer1.equals("")){
+        if (answer1.equals(null) || answer1.equals("")) {
             throw new IllegalArgumentException("answer 1 must not be null or empty");
         }
         this.answer1 = answer1;
@@ -85,7 +86,7 @@ public class Question {
     }
 
     public void setAnswer2(String answer2) {
-        if(answer2.equals(null) || answer2.equals("")){
+        if (answer2.equals(null) || answer2.equals("")) {
             throw new IllegalArgumentException("answer 2 must not be null or empty");
         }
         this.answer2 = answer2;
@@ -96,7 +97,7 @@ public class Question {
     }
 
     public void setAnswer3(String answer3) {
-        if(answer3.equals(null) || answer3.equals("")){
+        if (answer3.equals(null) || answer3.equals("")) {
             throw new IllegalArgumentException("answer 3 must not be null or empty");
         }
         this.answer3 = answer3;
@@ -107,7 +108,7 @@ public class Question {
     }
 
     public void setAnswer4(String answer4) {
-        if(answer4.equals(null) || answer4.equals("")){
+        if (answer4.equals(null) || answer4.equals("")) {
             throw new IllegalArgumentException("answer 4 must not be null or empty");
         }
         this.answer4 = answer4;
@@ -118,7 +119,7 @@ public class Question {
     }
 
     public void setRightAnswer(String rightAnswer) {
-        if(rightAnswer.equals(null) || rightAnswer.equals("")){
+        if (rightAnswer.equals(null) || rightAnswer.equals("")) {
             throw new IllegalArgumentException("rightAnswer must not be null or empty");
         }
         this.rightAnswer = rightAnswer;
@@ -126,13 +127,13 @@ public class Question {
 
     @Override
     public boolean equals(Object obj) {
-        Question other = (Question)obj;
+        Question other = (Question) obj;
         return this.getQuestion() == other.getQuestion();
     }
 
     @Override
     public String toString() {
-        return  "Color : " + this.getColor() + '\n' +
+        return "Color : " + this.getColor() + '\n' +
                 "Category : " + this.getCategory() + '\n' +
                 "Question : " + this.getQuestion() + '\n' +
                 "Answer 1 : " + this.getAnswer1() + '\n' +
