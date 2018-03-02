@@ -9,6 +9,7 @@ import java.util.Random;
 public class PlayerImpl extends PersonImpl implements Player, Comparable, Serializable {
 
     private String name;
+    private int wedgeScore;
     private int initRoll;
     private int posX;
     private int posY;
@@ -19,8 +20,9 @@ public class PlayerImpl extends PersonImpl implements Player, Comparable, Serial
     /**
      * default constructor
      */
-    PlayerImpl() {
+    public PlayerImpl() {
         super();
+        this.setWedgeScore(0);
         Random random = new Random();
         this.initRoll = random.nextInt(6) + 1;
     }
@@ -32,6 +34,7 @@ public class PlayerImpl extends PersonImpl implements Player, Comparable, Serial
      */
     public PlayerImpl(String n) {
         super(n);
+        this.setWedgeScore(0);
         Random random = new Random();
         this.initRoll = random.nextInt(6) + 1;
         this.setPosX(PLAYER_X);
@@ -76,6 +79,24 @@ public class PlayerImpl extends PersonImpl implements Player, Comparable, Serial
             throw new IllegalArgumentException("Sorry the x position must be positive");
         }
         this.posX = posX;
+    }
+
+    /**
+     * gets the wedge score
+     *
+     * @return the wedge score
+     */
+    public int getWedgeScore() {
+        return wedgeScore;
+    }
+
+    /**
+     * sets wedge score
+     *
+     * @param wedgeScore the wedge score you'd like to set
+     */
+    public void setWedgeScore(int wedgeScore) {
+        this.wedgeScore = wedgeScore;
     }
 
     /**

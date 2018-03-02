@@ -3,6 +3,7 @@ package Controller;
 import Model.Factory;
 import Model.Player;
 import Model.PlayerImpl;
+import Model.PlayerList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -28,21 +29,21 @@ public class playerWindow {
     public ChoiceBox deckTwo;
     public Button startButton;
     public Button exitbutton;
-
-    public ArrayList<PlayerImpl> player = new ArrayList();
+    public PlayerList players;
 
     /**
-     * adds player to Array list
+     * adds players to an array list when add player is hit
      *
-     * @param mouseEvent mouse click
+     * @param mouseEvent click
      */
-
     public void addPlayers(MouseEvent mouseEvent) {
         String pn;
         pn = playerNamer.getText();
-        PlayerImpl newPlayer = new PlayerImpl(pn);
-        player.add(newPlayer);
-        System.out.println(player.toString());
+//        PlayerImpl newPlayer =  new PlayerImpl(pn);
+        Player newPlayer = Factory.getPlayerInstance(pn);
+        players.add(newPlayer);
+        playerNamer.setText("");
+        System.out.println(players.toString());
     }
 
     /**
