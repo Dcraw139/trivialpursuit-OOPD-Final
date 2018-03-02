@@ -1,6 +1,10 @@
 package Model;
 
-public class Question {
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import java.io.Serializable;
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class Question implements Serializable {
 
     private String question;
     private Color color;
@@ -18,12 +22,12 @@ public class Question {
     }
 
     public Question(String question, Color color, String category, String answer1, String answer2, String rightAnswer) {
-        this.setQuestion(question);
-        this.setColor(color);
-        this.setCategory(category);
-        this.setAnswer1(answer1);
-        this.setAnswer2(answer2);
-        this.setRightAnswer(rightAnswer);
+            this.setQuestion(question);
+            this.setColor(color);
+            this.setCategory(category);
+            this.setAnswer1(answer1);
+            this.setAnswer2(answer2);
+            this.setRightAnswer(rightAnswer);
     }
 
     public Question(String question, Color color, String category, String answer1, String answer2, String answer3, String answer4, String rightAnswer) {
@@ -97,9 +101,9 @@ public class Question {
     }
 
     public void setAnswer3(String answer3) {
-        if (answer3.equals(null) || answer3.equals("")) {
-            throw new IllegalArgumentException("answer 3 must not be null or empty");
-        }
+//        if(answer3.equals(null) || answer3.equals("")){
+//            throw new IllegalArgumentException("answer 3 must not be null or empty");
+//        }
         this.answer3 = answer3;
     }
 
@@ -108,9 +112,9 @@ public class Question {
     }
 
     public void setAnswer4(String answer4) {
-        if (answer4.equals(null) || answer4.equals("")) {
-            throw new IllegalArgumentException("answer 4 must not be null or empty");
-        }
+//        if(answer4.equals(null) || answer4.equals("")){
+//            throw new IllegalArgumentException("answer 4 must not be null or empty");
+//        }
         this.answer4 = answer4;
     }
 
@@ -133,7 +137,7 @@ public class Question {
 
     @Override
     public String toString() {
-        return "Color : " + this.getColor() + '\n' +
+        return  "Color : " + this.getColor() + '\n' +
                 "Category : " + this.getCategory() + '\n' +
                 "Question : " + this.getQuestion() + '\n' +
                 "Answer 1 : " + this.getAnswer1() + '\n' +
