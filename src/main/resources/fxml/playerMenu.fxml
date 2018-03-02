@@ -6,16 +6,20 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
+<?import javafx.scene.control.Label?>
 <VBox fx:controller="Controller.playerWindow" fx:id="addPlayerScene" alignment="CENTER" maxHeight="-Infinity"
       maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0"
       xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" style="-fx-background-color: teal;">
 
     <children>
-        <TextField fx:id="playerNamer"  prefHeight="28.0" prefWidth="50.0"/>
+        <HBox alignment="CENTER">
+        <TextField fx:id="playerNamer" prefHeight="28.0" prefWidth="250.0"/>
+        </HBox>
         <Button fx:id="addPlayer" prefWidth="250.0" mnemonicParsing="false" onMouseClicked="#addPlayers" text="Add Player"/>
-        <HBox fx:id="deckOptions" alignment="CENTER" prefHeight="28.0" prefWidth="250.0">
+        <HBox fx:id="deckOptions" alignment="CENTER" prefHeight="28.0" prefWidth="250.0" >
             <children>
                 <ChoiceBox fx:id="deckOne" prefWidth="250.0"/>
+                <Label  text="  "/>
                 <ChoiceBox fx:id="deckTwo" prefWidth="250.0"/>
             </children>
         </HBox>
