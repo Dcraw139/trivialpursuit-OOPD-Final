@@ -13,7 +13,7 @@ public class Deck extends ArrayList<Card> {
     public void shuffle() {
         Collections.shuffle(this);
     }
-
+//thx sophie
     //card
     //deck name & question list
     //question, color, category, a1, a2, a3, a4, rA
