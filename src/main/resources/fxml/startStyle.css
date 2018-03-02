@@ -1,8 +1,15 @@
 .root{
-    -fx-background-color: darkgray;
+    -fx-background-color: teal;
 }
+
+#contain {
+    -fx-text-alignment: center;
+}
+
 #startImage{
     -fx-background-image: url('/pictures/logo.png');
+    -fx-background-position: center;
     -fx-background-repeat: no-repeat;
     -fx-padding: 100%;
+
 }

@@ -31,14 +31,19 @@ public class playerWindow {
 
     public ArrayList<PlayerImpl> player = new ArrayList();
 
+    /**
+     * adds player to Array list
+     *
+     * @param mouseEvent mouse click
+     */
 
     public void addPlayers(MouseEvent mouseEvent) {
         String pn;
         pn = playerNamer.getText();
-        PlayerImpl newPlayer =  new PlayerImpl(pn);
+        PlayerImpl newPlayer = new PlayerImpl(pn);
         player.add(newPlayer);
         System.out.println(player.toString());
-            }
+    }
 
     /**
      * checks weather or not the user truly wants to exit
