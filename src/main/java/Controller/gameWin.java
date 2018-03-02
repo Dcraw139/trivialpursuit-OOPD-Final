@@ -1,13 +1,15 @@
 package Controller;
 
 import Model.*;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.image.ImageView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
@@ -15,6 +17,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.Random;
 import java.util.ResourceBundle;
 
@@ -30,7 +33,7 @@ public class gameWin implements Initializable {
     @FXML
     public Button rollDice;
     @FXML
-    public TableView playerScores;
+    public TableView<Player> playerScores;
     @FXML
     public TableColumn playerRow;
     @FXML
@@ -42,8 +45,41 @@ public class gameWin implements Initializable {
     @FXML
     public Pane diceRollImage;
 
+    public void diceRoller(MouseEvent mouseEvent) {
+        Random random = new Random();
+        int dRoll = random.nextInt(6) + 1;
+        switch (dRoll) {
+            case 1:
+                diceRollImage.setStyle("-fx-background-image: url('pictures/diceone.png')");
+                infoText.setText("You rolled one!");
+                break;
+            case 2:
+                diceRollImage.setStyle("-fx-background-image: url('pictures/dicetwo.png')");
+                infoText.setText("You rolled two!");
+                break;
+            case 3:
+                diceRollImage.setStyle("-fx-background-image: url('pictures/dicethree.png')");
+                infoText.setText("You rolled three!");
+                break;
+            case 4:
+                diceRollImage.setStyle("-fx-background-image: url('pictures/dicefour.png')");
+                infoText.setText("You rolled four!");
+                break;
+            case 5:
+                diceRollImage.setStyle("-fx-background-image: url('pictures/dicefour.png')");
+                infoText.setText("You rolled five!");
+                break;
+            case 6:
+                diceRollImage.setStyle("-fx-background-image: url('pictures/dicesix.png')");
+                infoText.setText("You rolled six!");
+                break;
+            default:
+        }
+    }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
         TileImpl onetwo = new TileImpl(Color.BLUE, TileType.WEDGE);
         boardArea.add(onetwo.getShow(), 0, 1);
         TileImpl center = new TileImpl(Color.CENTER, TileType.CENTER);
@@ -208,38 +244,26 @@ public class gameWin implements Initializable {
         boardArea.setRowSpan(zerofive.getShow(), 3);
         boardArea.add(zerofive.getShow(), 0, 12);
 
+        playerScores.setEditable(true);
 
-    }
+        playerWindow Players = new playerWindow();
 
-    public void diceRoller(MouseEvent mouseEvent) {
-        Random random = new Random();
-        int dRoll = random.nextInt(6)+1;
-        switch (dRoll){
-            case 1:
-                diceRollImage.setStyle("-fx-background-image: url('pictures/diceone.png')");
-                infoText.setText("You rolled one!");
-                break;
-            case 2:
-                diceRollImage.setStyle("-fx-background-image: url('pictures/dicetwo.png')");
-                infoText.setText("You rolled two!");
-                break;
-            case 3:
-                diceRollImage.setStyle("-fx-background-image: url('pictures/dicethree.png')");
-                infoText.setText("You rolled three!");
-                break;
-            case 4:
-                diceRollImage.setStyle("-fx-background-image: url('pictures/dicefour.png')");
-                infoText.setText("You rolled four!");
-                break;
-            case 5:
-                diceRollImage.setStyle("-fx-background-image: url('pictures/dicefour.png')");
-                infoText.setText("You rolled five!");
-                break;
-            case 6:
-                diceRollImage.setStyle("-fx-background-image: url('pictures/dicesix.png')");
-                infoText.setText("You rolled six!");
-                break;
-                default:
-        }
+        ArrayList<Player> hello = new ArrayList<>();
+        hello.add(new PlayerImpl("Jim"));
+        hello.add(new PlayerImpl("Joe"));
+
+        ObservableList<Player> data =
+                FXCollections.observableArrayList(
+                        Players.players
+                );
+
+        playerRow.setCellValueFactory(
+                new PropertyValueFactory<Player, String>("name")
+        );
+        wedgeRow.setCellValueFactory(
+                new PropertyValueFactory<Player, Integer>("wedgeScore")
+        );
+        playerScores.setItems(data);
+
     }
 }

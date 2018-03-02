@@ -43,4 +43,23 @@ public class Factory {
         return new TileImpl(c, t);
     }
 
+    /**
+     * returns a default player
+     *
+     * @return the default player
+     */
+    public static Player getPlayerInstance() {
+        return new PlayerImpl();
+    }
+
+    /**
+     * returns an overloaded player
+     *
+     * @param n the players name
+     * @return the overloaded player
+     */
+    public static Player getPlayerInstance(String n) {
+        return new PlayerImpl(n);
+    }
+
 }
