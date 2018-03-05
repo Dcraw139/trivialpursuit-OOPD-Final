@@ -37,11 +37,11 @@ public class Deck extends ArrayList<Card> {
     Card card = new Card("test", testQ);
     ObjectMapper objmap = new ObjectMapper();
     objmap.configure(DeserializationFeature.ACCEPT_EMPTY_ARRAY_AS_NULL_OBJECT , false);
-        try {
-            objmap.writeValue(new File("target/test.json"), card);
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
+//        try {
+//            objmap.writeValue(new File("target/test.json"), card);
+//        } catch (IOException ex) {
+//            ex.printStackTrace();
+//        }
 
 
         try {
