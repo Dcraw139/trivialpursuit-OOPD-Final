@@ -23,7 +23,7 @@
                 <ChoiceBox fx:id="deckTwo" prefWidth="250.0"/>
             </children>
         </HBox>
-        <Button fx:id="startButton" prefWidth="250.0" mnemonicParsing="false" text="Start Game" onMouseClicked="#checkForContinue"/>
+        <Button fx:id="startButton" prefWidth="250.0" mnemonicParsing="false" text="Start Game" onMouseClicked="#checkForContinue" disable="true"/>
         <Button fx:id="exitbutton" prefWidth="250.0" mnemonicParsing="false" text="Exit" onMouseClicked="#exitConfirm"/>
     </children>
 </VBox>

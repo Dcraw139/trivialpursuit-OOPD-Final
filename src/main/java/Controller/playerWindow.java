@@ -2,9 +2,7 @@ package Controller;
 
 import Model.Factory;
 import Model.Player;
-import Model.PlayerImpl;
 import Model.PlayerList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -14,7 +12,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-import java.util.ArrayList;
+import java.io.*;
 
 /**
  * the controller class for the player window
@@ -29,7 +27,10 @@ public class playerWindow {
     public ChoiceBox deckTwo;
     public Button startButton;
     public Button exitbutton;
-    public PlayerList players;
+    public PlayerList players = new PlayerList();
+
+    public playerWindow() {
+    }
 
     /**
      * adds players to an array list when add player is hit
@@ -38,12 +39,27 @@ public class playerWindow {
      */
     public void addPlayers(MouseEvent mouseEvent) {
         String pn;
-        pn = playerNamer.getText();
-//        PlayerImpl newPlayer =  new PlayerImpl(pn);
-        Player newPlayer = Factory.getPlayerInstance(pn);
-        players.add(newPlayer);
-        playerNamer.setText("");
-        System.out.println(players.toString());
+        try {
+            pn = playerNamer.getText();
+            Player newPlayer = Factory.getPlayerInstance(pn);
+            players.add(newPlayer);
+            playerNamer.setText("");
+            if (players.size() >= 2) {
+                startButton.setDisable(false);
+            }
+            System.out.println(players.toString());
+        } catch (IllegalArgumentException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * gets the playerlist
+     *
+     * @return the playerlist
+     */
+    public PlayerList getPlayers() {
+        return players;
     }
 
     /**
@@ -76,6 +92,7 @@ public class playerWindow {
         try {
             Stage stageC = (Stage) startButton.getScene().getWindow();
             stageC.close();
+            savePlayers();
             FXMLLoader loader = new FXMLLoader(ClassLoader.getSystemResource("fxml/gameWindow.fxml"));
             Parent root1 = loader.load();
             gameWin gWin = loader.getController();
@@ -86,5 +103,28 @@ public class playerWindow {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    private static final String playerFileName = "players.sav";
+
+    private void savePlayers() throws IOException {
+        try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(playerFileName))) {
+            out.writeObject(this.players);
+        }
+    }
+
+    public PlayerList loadPlayer() throws IOException {
+        if (new File(playerFileName).exists()) {
+            try (ObjectInputStream in = new ObjectInputStream(new FileInputStream(playerFileName))) {
+
+                try {
+                    return this.players = (PlayerList) in.readObject();
+
+                } catch (ClassNotFoundException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        return null;
     }
 }

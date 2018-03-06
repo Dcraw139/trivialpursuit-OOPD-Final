@@ -33,9 +33,11 @@ public class startupWindow {
         try {
             Stage stageC = (Stage) startButton.getScene().getWindow();
             stageC.close();
-            Parent root1 = FXMLLoader.load(ClassLoader.getSystemResource("fxml/playerMenu.fxml"));
+            FXMLLoader loader = new FXMLLoader(ClassLoader.getSystemResource("fxml/playerMenu.fxml"));
+            Parent root1 = loader.load();
+            playerWindow pWin = loader.getController();
             Stage stage = new Stage();
-            stage.setTitle("Add Players");
+            stage.setTitle("Trivial Pursuit");
             stage.setScene(new Scene(root1));
             stage.show();
         } catch (Exception e) {

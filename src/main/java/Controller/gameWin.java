@@ -26,6 +26,8 @@ import java.util.ResourceBundle;
  */
 public class gameWin implements Initializable {
 
+    private int currentRoll;
+
     @FXML
     public BorderPane gameBoarder;
     @FXML
@@ -45,6 +47,24 @@ public class gameWin implements Initializable {
     @FXML
     public Pane diceRollImage;
 
+    /**
+     * gets current roll
+     * @return the current roll
+     */
+    public int getCurrentRoll() {
+        return currentRoll;
+    }
+
+    /**
+     * default constructor
+     */
+    public gameWin(){
+    }
+
+    /**
+     * rolls the dice, changes onscreen picture
+     * @param mouseEvent clicked
+     */
     public void diceRoller(MouseEvent mouseEvent) {
         Random random = new Random();
         int dRoll = random.nextInt(6) + 1;
@@ -52,26 +72,32 @@ public class gameWin implements Initializable {
             case 1:
                 diceRollImage.setStyle("-fx-background-image: url('pictures/diceone.png')");
                 infoText.setText("You rolled one!");
+                currentRoll = 1;
                 break;
             case 2:
                 diceRollImage.setStyle("-fx-background-image: url('pictures/dicetwo.png')");
                 infoText.setText("You rolled two!");
+                currentRoll = 2;
                 break;
             case 3:
                 diceRollImage.setStyle("-fx-background-image: url('pictures/dicethree.png')");
                 infoText.setText("You rolled three!");
+                currentRoll = 3;
                 break;
             case 4:
                 diceRollImage.setStyle("-fx-background-image: url('pictures/dicefour.png')");
                 infoText.setText("You rolled four!");
+                currentRoll = 4;
                 break;
             case 5:
                 diceRollImage.setStyle("-fx-background-image: url('pictures/dicefour.png')");
                 infoText.setText("You rolled five!");
+                currentRoll = 5;
                 break;
             case 6:
                 diceRollImage.setStyle("-fx-background-image: url('pictures/dicesix.png')");
                 infoText.setText("You rolled six!");
+                currentRoll = 6;
                 break;
             default:
         }
@@ -248,13 +274,16 @@ public class gameWin implements Initializable {
 
         playerWindow Players = new playerWindow();
 
-        ArrayList<Player> hello = new ArrayList<>();
-        hello.add(new PlayerImpl("Jim"));
-        hello.add(new PlayerImpl("Joe"));
+        ArrayList<Player> tester = new ArrayList<Player>();
+
+        tester.add(new PlayerImpl("Jim"));
+        tester.add(new PlayerImpl("Joe"));
+
+        setHello(tester);
 
         ObservableList<Player> data =
                 FXCollections.observableArrayList(
-                        Players.players
+                        getHello()
                 );
 
         playerRow.setCellValueFactory(
@@ -265,5 +294,23 @@ public class gameWin implements Initializable {
         );
         playerScores.setItems(data);
 
+    }
+
+    public ArrayList<Player> hello;
+
+    /**
+     * gets hello
+     * @return hello
+     */
+    public ArrayList<Player> getHello() {
+        return hello;
+    }
+
+    /**
+     * sets hello
+     * @param hello what you want to set
+     */
+    public void setHello(ArrayList<Player> hello) {
+        this.hello = hello;
     }
 }
