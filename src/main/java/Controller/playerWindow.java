@@ -29,9 +29,6 @@ public class playerWindow {
     public Button exitbutton;
     public PlayerList players = new PlayerList();
 
-    public playerWindow() {
-    }
-
     /**
      * adds players to an array list when add player is hit
      *
@@ -113,6 +110,12 @@ public class playerWindow {
         }
     }
 
+    /**
+     * load a player from a file
+     *
+     * @return the playerlist
+     * @throws IOException throws
+     */
     public PlayerList loadPlayer() throws IOException {
         if (new File(playerFileName).exists()) {
             try (ObjectInputStream in = new ObjectInputStream(new FileInputStream(playerFileName))) {

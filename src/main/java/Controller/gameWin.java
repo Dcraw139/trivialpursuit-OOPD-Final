@@ -49,6 +49,7 @@ public class gameWin implements Initializable {
 
     /**
      * gets current roll
+     *
      * @return the current roll
      */
     public int getCurrentRoll() {
@@ -58,11 +59,12 @@ public class gameWin implements Initializable {
     /**
      * default constructor
      */
-    public gameWin(){
+    public gameWin() {
     }
 
     /**
      * rolls the dice, changes onscreen picture
+     *
      * @param mouseEvent clicked
      */
     public void diceRoller(MouseEvent mouseEvent) {
@@ -300,6 +302,7 @@ public class gameWin implements Initializable {
 
     /**
      * gets hello
+     *
      * @return hello
      */
     public ArrayList<Player> getHello() {
@@ -308,6 +311,7 @@ public class gameWin implements Initializable {
 
     /**
      * sets hello
+     *
      * @param hello what you want to set
      */
     public void setHello(ArrayList<Player> hello) {

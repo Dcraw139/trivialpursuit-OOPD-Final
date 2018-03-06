@@ -128,6 +128,6 @@ public class PlayerImpl extends PersonImpl implements Player, Comparable, Serial
     @Override
     public int compareTo(Object o) {
         PlayerImpl obj = (PlayerImpl) o;
-        return super.compareTo(o);
+        return this.getInitRoll() - obj.getInitRoll();
     }
 }
