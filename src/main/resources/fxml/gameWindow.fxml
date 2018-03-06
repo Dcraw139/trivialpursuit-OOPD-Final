@@ -68,7 +68,7 @@
         </TableView>
     </left>
     <bottom>
-        <Label fx:id="infoText" text="Info Goes Here" BorderPane.alignment="CENTER" id="infoText"/>
+        <Label fx:id="infoText" text="Welcome to Trivial Pursuit!" BorderPane.alignment="CENTER" id="infoText"/>
     </bottom>
     <right>
         <VBox fx:id="diceRollHolder" alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
