@@ -1,5 +1,8 @@
 package Model;
 
+/**
+ * Interface for a Person
+ */
 public interface Person {
 
     public String getName();

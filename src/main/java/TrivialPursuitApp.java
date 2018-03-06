@@ -4,6 +4,9 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+/**
+ * Runs the application of Trivial Pursuit
+ */
 public class TrivialPursuitApp extends Application {
 
     public static void main(String[] args) {

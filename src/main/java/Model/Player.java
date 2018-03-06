@@ -1,5 +1,8 @@
 package Model;
 
+/**
+ * Interface that models a Player
+ */
 public interface Player {
 
     public int getInitRoll();
